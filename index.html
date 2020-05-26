@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Step project Cards</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+  </div>
+  <button class="create-btn"></button>
+  <div class="modal">
+    <select name="select-doctor" id="">
+      <option class="select-item">Cardiologist</option>
+      <option class="select-item">Dantist</option>
+      <option class="select-item">Therapevt</option>
+    </select>
+
+    <form id="cardiologistForm" action="">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="text" name="age" placeholder="Age" required>
+      <input type="text" name="surname" placeholder="Surname" required>
+      <input type="text" name="visit" placeholder="visit" required>
+      <input type="text" name="pressure" placeholder="Pressure" required>
+      <input type="text" name="massIndex" placeholder="Mass index" required>
+      <input type="text" name="bolezn" placeholder="bolezn" required>
+      <input type="text" name="pressure" placeholder="Pressure" required>
+      <textarea name="comments" id="form-comments-cardiologist" cols="40" rows="10"></textarea>
+      <button type="submit">Create</button>
+      <button type="reset">Close</button>
+    </form>
+
+    <form id="dantistForm" action="">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="text" name="visit" placeholder="visit" required>
+      <input type="text" name="data-last-visit" placeholder="Data of last visit" required>
+      <textarea name="comments" id="form-comments-dantist" cols="40" rows="10"></textarea>
+    </form>
+
+    <form id="therapevtForm" action="">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="text" name="age" placeholder="Age" required>
+      <input type="text" name="visit" placeholder="visit" required>
+      <textarea name="comments" id="form-comments-terapevt" cols="40" rows="10"></textarea>
+    </form>
+
+
+  </div>
+  <main>
+    <div id="container" class="board"></div>
+  </main>
+</header>
+<script src="js/axios.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
