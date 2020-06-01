@@ -1,0 +1,15 @@
+.buttons {
+  background-color: #555;
+  color: #fff;
+  border-radius: 25px;
+  padding: 15px 45px;
+  border: none;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #d2ccd0;
+    color: #7f6d78;
+    transition: 0.3s;
+  }
+}
