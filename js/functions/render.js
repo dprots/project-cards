@@ -1,3 +1,3 @@
-function render(elem, place) {
+export function render(elem, place) {
     place.append(elem.render());
 }
