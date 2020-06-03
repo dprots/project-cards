@@ -1,5 +1,5 @@
 export default class Modal {
-  constructor (id, classList, modalContent) {
+  constructor (id, classList) {
     this._id = id;
     this._classList = classList;
     this.elem = null;

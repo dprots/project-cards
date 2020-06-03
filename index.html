@@ -6,38 +6,43 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <div id="root"></div>
+
 <header id="header" class="header">
-  <div class="logo">
+  <div class="logo"></div>
+  <div>
+    <h1 class="header-title">TITLE</h1>
   </div>
-  <button id="enter-btn" class="header-btn">Enter</button>
-
-  <form id="form-filter-visits" action="">
-   <fieldset>
-     <legend>Search of visit</legend>
-      <input type="text" name="search-visit" placeholder="Visit" required>
-        Status
-        <select name="select-status" id="select-status">
-                <option class="select-item">Open</option>
-                <option class="select-item">Done</option>
-        </select>
-     Urgency
-     <select name="select-urgency" id="select-urgency">
-       <option class="select-item">High</option>
-       <option class="select-item">Normal</option>
-       <option class="select-item">Low</option>
-     </select>
-     <input type="submit">
-    </fieldset>
-  </form>
-
-  <main>
-    <div id="container" class="board">
-      <p>No items have been added</p>
-    </div>
-  </main>
+  <button id="btn-login" class="header-btn active">Enter</button>
+  <button id="btn-create" class="header-btn">Create a visit</button>
 </header>
-<script src="js/functions/render.js"></script>
+
+<section id='search-visit' class="search">
+<!--  <form id="form-search-visits" action="">-->
+<!--    <fieldset>-->
+<!--      <legend>Search of visit</legend>-->
+<!--      <input type="text" name="search-visit" placeholder="Search parameter" required>-->
+<!--      Status-->
+<!--      <select name="select-status" id="select-status">-->
+<!--        <option class="select-item">Open</option>-->
+<!--        <option class="select-item">Done</option>-->
+<!--      </select>-->
+<!--      Urgency-->
+<!--      <select name="select-urgency" id="select-urgency">-->
+<!--        <option class="select-item">High</option>-->
+<!--        <option class="select-item">Normal</option>-->
+<!--        <option class="select-item">Low</option>-->
+<!--      </select>-->
+<!--      <input type="submit" value="Search">-->
+<!--    </fieldset>-->
+<!--  </form>-->
+</section>
+
+<section id="visit-container" class="board">
+  <p class="active">No items have been added</p>
+</section>
+
 <script src="js/config/axios.min.js"></script>
 <script type="module" src="js/main.js"></script>
 </body>

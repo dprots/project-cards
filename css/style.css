@@ -33,3 +33,11 @@ body {
 .modal.active {
   display: block;
 }
+
+.header-btn {
+  display: none;
+}
+
+.header-btn.active {
+  display: block;
+}
