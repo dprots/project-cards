@@ -9,13 +9,13 @@ export default class Select {
   }
 
   render() {
-    debugger
     this.elem = document.createElement('div');
     this.elem.insertAdjacentHTML( 'beforeend', this._label);
     const selectElem = document.createElement('select');
     selectElem.id =this._idSelect;
     selectElem.setAttribute( 'name', `${this._nameSelect}`);
-    const selectItemHTML = this._selectItem.map(item => `<option class="${this._classItem}">${item}</option>`).join('');
+    const selectItemHTML = this._selectItem.map(item => `<option class="${this._classItem}" 
+                           value="${item}">${item}</option>`).join('');
     selectElem.insertAdjacentHTML('beforeend', selectItemHTML);
     this.elem.append(selectElem);
     return this.elem;

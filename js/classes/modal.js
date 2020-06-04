@@ -1,6 +1,5 @@
 export default class Modal {
-  constructor (id, classList) {
-    this._id = id;
+  constructor (classList) {
     this._classList = classList;
     this.elem = null;
   }
@@ -8,15 +7,6 @@ export default class Modal {
   render() {
     this.elem = document.createElement('div');
     this.elem.classList = this._classList;
-    this.elem.id = this._id;
     return this.elem;
-  }
-
-  openModal() {
-    this.elem.classList.add("active");
-  }
-
-  closeModal() {
-    this.elem.classList.remove("active");
   }
 }

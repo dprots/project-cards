@@ -1,24 +1,36 @@
+import {Input} from '../classes';
+import {render} from '../functions';
+
 export default class Form {
-  constructor(actionForm = '', idForm, classesForm){
+  constructor(actionForm = '', idForm, classesForm, buttons){
     this._action = actionForm;
     this._idForm = idForm;
     this._classesForm = classesForm;
+    this._buttons = buttons;
     this.elem = null;
   }
 
-  render () {
+  render() {
     this.elem = document.createElement('form');
     this.elem.classList = this._classesForm;
     this.elem.id = this._idForm;
     this.elem.action = this._action;
+    const fieldSet = document.createElement('fieldset');
+    fieldSet.classList.add('form-fieldset');
+    this.elem.append(fieldSet);
+    for (const [key, value] of Object.entries(this._buttons)) {
+      const button = new Input (`${key}`, '', `${value}`);
+      render(button, this.elem);
+    }
     return this.elem;
   }
 
-  handleSubmit() {
-
-  }
-
-  serializeJSON() {
-
+  serialize() {
+    const inputsName = this.elem.querySelectorAll('[name]');
+    const body = {};
+      inputsName.forEach(item => {
+        body[item.name] = item.value
+      });
+    return body;
   }
 }

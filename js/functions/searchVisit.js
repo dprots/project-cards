@@ -1,16 +1,24 @@
 import {Form, Select, Input} from '../classes';
-import {render} from "../functions";
+import {axiosRequest, render,appendCard} from '../functions';
 
 export function searchVisit() {
-  const formSearch = new Form ('', 'form-search-visit', 'form');
+  const formSearch = new Form ('', 'form-search-visit', 'form', {submit: 'Search'});
   render(formSearch, document.getElementById('search-visit'));
+  const fieldContainer = formSearch.elem.querySelector('.form-fieldset');
   const inputSearch = new Input ('text','search-visit', '', 'Search parameter', 'required');
   const selectStatus = new Select('Status: ','select-status', 'select-status', 'select-item', ['Open', 'Done']);
   const selectUrgency = new Select('Urgency: ','select-urgency', 'select-urgency', 'select-item', ['High', 'Normal', 'Low']);
-  const searchButton = new Input ('submit', '', 'Search', 'Search');
-  render(inputSearch, formSearch.elem);
-  render(selectStatus, formSearch.elem);
-  render(selectUrgency, formSearch.elem);
-  render(searchButton, formSearch.elem);
 
+  render(inputSearch, fieldContainer);
+  render(selectStatus, fieldContainer);
+  render(selectUrgency, fieldContainer);
+
+  formSearch.elem.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const body = formSearch.serialize();
+    const dataVisit = await axiosRequest('GET', 'cards');
+    dataVisit.forEach(item => {
+      appendCard(item)
+    })
+  })
 }

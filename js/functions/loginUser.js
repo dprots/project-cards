@@ -1,39 +1,32 @@
-import {Form, Input, Modal} from "../classes";
-import {render, searchVisit, submitLogin} from "../functions";
+import {Form, Input, Modal} from '../classes';
+import {axiosRequest, render, searchVisit} from '../functions';
 
 export function loginUser() {
-  const modalLogin = new Modal('modal-login', 'modal');
+  const modalLogin = new Modal('modal');
   render(modalLogin, document.getElementById('root'));
-  const formLogin = new Form('', 'form-login', 'form');
+  const formLogin = new Form('', 'form-login', 'form', {submit: 'Enter', reset: 'Cancel'});
   render(formLogin, modalLogin.elem);
-  const inputEmail = new Input('email', 'email', '', 'Email', 'required');
+  const fieldContainer = formLogin.elem.querySelector('.form-fieldset');
+  const inputEmail = new Input('email', 'email', null, 'Email', 'required');
   const inputPassword = new Input('password', 'password', '', 'Password', 'required');
-  const inputSubmit = new Input('submit', 'submitForm', 'Enter', '');
-  const inputReset = new Input('reset', 'resetForm', 'Cancel', '');
-  render(inputEmail, formLogin.elem);
-  render(inputPassword, formLogin.elem);
-  render(inputSubmit, formLogin.elem);
-  render(inputReset, formLogin.elem);
-  modalLogin.openModal();
 
-  document.getElementById('form-login').addEventListener('submit', async function(e) {
+  render(inputEmail, fieldContainer);
+  render(inputPassword, fieldContainer);
+
+  formLogin.elem.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const userEmail = this.querySelector('[name=email]').value;
-    const userPassword = this.querySelector('[name=password]').value;
     localStorage.clear();
+    const body = formLogin.serialize();
     modalLogin.elem.remove();
-    const {data} = await axios.post('http://cards.danit.com.ua/login', {
-      email: userEmail,
-      password: userPassword
-    });
-    if (data.status === 'Success') {
-      localStorage.setItem('token', data.token);
+    const respData = await axiosRequest('POST', 'login', body);
+
+    if (respData.status === 'Success') {
+      localStorage.setItem('token', respData.token);
       document.getElementById('btn-login').classList.remove('active');
       document.getElementById('btn-create').classList.add('active');
       searchVisit();
-      alert ('Login successful');
     } else {
-      alert(data.message)
+      alert(respData.message)
     }
   });
 
@@ -42,8 +35,8 @@ export function loginUser() {
     // if (!!(e.target.id != 'btn-login' & !e.target.closest('.form-login'))) {
     //   modalLogin.closeModal()
     // }
-    if (e.target === inputReset.elem) {
-      modalLogin.closeModal()
+    if (e.target === this.querySelector('[type="reset"]')) {
+      modalLogin.elem.remove()
     }
 
   })
