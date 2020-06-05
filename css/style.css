@@ -2,12 +2,35 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/*HEADER Section*/
 header {
   display: flex;
+  padding: 0 20px 0 20px;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid;
 }
 
+/*SEARCH Section*/
+.search {
+  font-size: 18px;
+}
+
+.form {
+  display: flex;
+  padding-right: 25%;
+  padding-left: 25%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form-fieldset {
+  display: contents;
+  border: none;
+}
+
+/*MODAL WINDOW*/
 .modal {
   display: block;
   position: fixed;
@@ -22,11 +45,6 @@ header {
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-}
-
-.form-fieldset {
-  display: contents;
-  border: none;
 }
 
 .board {
