@@ -56,6 +56,7 @@ export function createVisit() {
     formCreateVisit.elem.addEventListener('submit', async function(e) {
       e.preventDefault();
       const bodyAdd = formCreateVisit.serialize();
+      bodyAdd['doctor'] = selectedDoctor;
       const dataPost = await axiosRequest('POST','cards', bodyAdd);
       if (dataPost.id) {
         alert('Visit successful added');
@@ -63,6 +64,16 @@ export function createVisit() {
         appendCard(dataPost);
       } else {
         alert('Error, try again');
+      }
+    });
+
+    modalCreateVisit.elem.addEventListener('click', function(e) {
+      // debugger
+      // if (!!(e.target.id != 'btn-login' & !e.target.closest('.form-login'))) {
+      //   modalLogin.closeModal()
+      // }
+      if (e.target === this.querySelector('[type="reset"]')) {
+        modalCreateVisit.elem.remove()
       }
     })
   })

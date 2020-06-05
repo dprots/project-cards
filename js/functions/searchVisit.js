@@ -15,6 +15,8 @@ export function searchVisit() {
 
   formSearch.elem.addEventListener('submit', async function (e) {
     e.preventDefault();
+    const cards = document.querySelectorAll('.board > div');
+    cards.forEach(elem => elem.remove());
     const body = formSearch.serialize();
     const dataVisit = await axiosRequest('GET', 'cards');
     dataVisit.forEach(item => {

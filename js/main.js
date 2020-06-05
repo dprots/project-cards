@@ -1,4 +1,8 @@
-import {createVisit, loginUser} from './functions/index.js';
+import {axiosRequest, createVisit, loginUser, deleteCard} from './functions/index.js';
+
+// for (let i=7575; i < 7650; i++) {
+//   axiosRequest('DELETE', `cards/${i}`);
+// }
 
 document.addEventListener('click', function (e) {
   if (e.target.id === 'btn-login') loginUser();
@@ -7,6 +11,7 @@ document.addEventListener('click', function (e) {
     e.target.classList.remove('active');
     e.target.nextSibling.classList.add('active');
   }
+  if (e.target.classList.contains('delete-icon')) deleteCard(e.target.parentNode);
 });
 
 

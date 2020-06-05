@@ -26,7 +26,7 @@ header {
 }
 
 .form-fieldset {
-  display: contents;
+  /*display: contents;*/
   border: none;
 }
 
@@ -67,11 +67,19 @@ header {
 }
 
 .card-visit {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid #555555;
   padding: 10px;
   margin: 5px;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
 }
 
 .header-btn {
