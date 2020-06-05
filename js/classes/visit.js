@@ -16,7 +16,7 @@ export default class Visit {
     this.elem.classList.add('card-visit');
     this.elem.setAttribute('data-id', `${this._id}`);
     this.elem.insertAdjacentHTML('beforeend', `<p>${this._name}</p><p>${this._surname}</p><p>${this._doctor}
-                                  </p><button class="btn-show active">Show more</button><span class="delete-icon">X</span>`);
+                                  </p><span class="delete-icon">X</span><button class="btn-show active">Show more</button>`);
     this._hiddenPlace = document.createElement('div');
     this._hiddenPlace.classList.add('hidden-place');
     this.elem.append(this._hiddenPlace);

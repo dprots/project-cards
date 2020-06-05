@@ -1,4 +1,4 @@
-import {axiosRequest} from "./axiosRequest";
+import {axiosRequest} from "./axiosRequest.js";
 
 export function deleteCard (elem) {
   if (confirm('Delete this card?')) axiosRequest('DELETE', `cards/${elem.dataset.id}`);
