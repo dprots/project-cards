@@ -13,10 +13,16 @@ header {
 
 /*SEARCH Section*/
 .search {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  font-size: 18px;
+}
 
+.form {
+  display: flex;
+  padding-right: 25%;
+  padding-left: 25%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .form-fieldset {
