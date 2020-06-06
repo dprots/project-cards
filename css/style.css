@@ -15,9 +15,13 @@ header {
 .search {
   font-size: 18px;
 }
+/*#form-search-visit .form-fieldset {*/
+/*  display: contents;*/
+/*}*/
 
 .form {
   display: flex;
+  flex-wrap: wrap;
   padding-right: 25%;
   padding-left: 25%;
   margin-top: 20px;
@@ -26,7 +30,7 @@ header {
 }
 
 .form-fieldset {
-  /*display: contents;*/
+  display: contents;
   border: none;
 }
 

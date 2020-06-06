@@ -5,7 +5,7 @@ export function createVisit() {
   const modalCreateVisit = new Modal('modal');
   render(modalCreateVisit, document.getElementById('root'));
   modalCreateVisit.elem.insertAdjacentHTML('beforeend', '<h3>Create a Visit</h3>');
-  const selectElem = new Select('', 'select-list-doctor', 'select-item', 'select-item',
+  const selectElem = new Select('', 'select-list-doctor', 'select-item',
       ['Cardiologist', 'Dentist', 'Therapist']);
   render(selectElem, modalCreateVisit.elem);
 
@@ -21,7 +21,7 @@ export function createVisit() {
     const inputName = new Input('text', 'name', '', 'Name', 'required');
     const inputSurname = new Input('text', 'surname', '', 'Surname','required');
     const inputPurposeVisit = new Input('text', 'purposeVisit', '', 'Purpose of Visit', 'required');
-    const selectUrgency = new Select('Urgency: ','select-urgency', 'select-select-urgency', 'select-item', ['High', 'Normal', 'Low']);
+    const selectUrgency = new Select('Urgency: ','urgency', 'select-item', ['High', 'Normal', 'Low']);
     const textComments = new TextArea('create-comments', '50', '3', 'Comments');
     const fieldContainer = formCreateVisit.elem.querySelector('.form-fieldset');
 
@@ -55,8 +55,12 @@ export function createVisit() {
 
     formCreateVisit.elem.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const bodyAdd = formCreateVisit.serialize();
-      bodyAdd['doctor'] = selectedDoctor;
+      const bodyContent = formCreateVisit.serialize();
+      const bodyAdd = {
+        doctor: selectedDoctor,
+        status: 'Open',
+        content: bodyContent
+      };
       const dataPost = await axiosRequest('POST','cards', bodyAdd);
       if (dataPost.id) {
         alert('Visit successful added');

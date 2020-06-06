@@ -1,7 +1,7 @@
 import {axiosRequest, createVisit, loginUser, deleteCard} from './functions/index.js';
 
 // for (let i=7575; i < 7650; i++) {
-//   axiosRequest('DELETE', `cards/${i}`);
+//   axiosRequest('DELETE', `cards/7620`);
 // }
 
 document.addEventListener('click', function (e) {
