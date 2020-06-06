@@ -63,7 +63,6 @@ export function createVisit() {
       };
       const dataPost = await axiosRequest('POST','cards', bodyAdd);
       if (dataPost.id) {
-        alert('Visit successful added');
         modalCreateVisit.elem.remove();
         appendCard(dataPost);
       } else {

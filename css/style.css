@@ -52,6 +52,7 @@ header {
 }
 
 .board {
+  margin-top: 30px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -77,6 +78,10 @@ header {
   border: 1px solid #555555;
   padding: 10px;
   margin: 5px;
+}
+
+.card-status {
+  display: none;
 }
 
 .delete-icon {

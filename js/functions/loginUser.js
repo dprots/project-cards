@@ -1,5 +1,5 @@
 import {Form, Input, Modal} from '../classes';
-import {axiosRequest, render, searchVisit} from '../functions';
+import {axiosRequest, render, searchVisit, showCards} from '../functions';
 
 export function loginUser() {
   const modalLogin = new Modal('modal');
@@ -22,9 +22,10 @@ export function loginUser() {
 
     if (respData.status === 'Success') {
       localStorage.setItem('token', respData.token);
+      document.cookie = 'authorized = true; Max-Age = 1500';
       document.getElementById('btn-login').classList.remove('active');
       document.getElementById('btn-create').classList.add('active');
-      searchVisit();
+      showCards();
     } else {
       alert(respData.message)
     }

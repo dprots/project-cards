@@ -2,7 +2,6 @@ import {render} from '../functions';
 import {VisitCardiologist, VisitDentist, VisitTherapist} from '../classes'
 
 export function appendCard(dataVisit) {
-  debugger
   let visitCard;
   document.querySelector('.board-empty').classList.remove('active');
   const dataArg = Object.values(dataVisit.content);
