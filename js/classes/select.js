@@ -12,8 +12,8 @@ export default class Select {
     this.elem.insertAdjacentHTML( 'beforeend', this._label);
     const selectElem = document.createElement('select');
     selectElem.setAttribute( 'name', `${this._nameSelect}`);
-    const selectItemHTML = this._selectItem.map(item => `<option class="${this._classItem}" 
-                           value="${item}">${item}</option>`).join('');
+    const selectItemHTML = `<option class="${this._classItem}"value="etc">Select</option>` +
+          this._selectItem.map(item => `<option class="${this._classItem}" value="${item}">${item}</option>`).join('');
     selectElem.insertAdjacentHTML('beforeend', selectItemHTML);
     this.elem.append(selectElem);
     return this.elem;

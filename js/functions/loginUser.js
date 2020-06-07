@@ -1,5 +1,5 @@
 import {Form, Input, Modal} from '../classes';
-import {axiosRequest, render, searchVisit, showCards} from '../functions';
+import {axiosRequest, render, showCards} from '../functions';
 
 export function loginUser() {
   const modalLogin = new Modal('modal');
@@ -13,14 +13,16 @@ export function loginUser() {
   render(inputEmail, fieldContainer);
   render(inputPassword, fieldContainer);
 
+  modalLogin.close();
+
   formLogin.elem.addEventListener('submit', async function(e) {
     e.preventDefault();
-    localStorage.clear();
     const body = formLogin.serialize();
     modalLogin.elem.remove();
     const respData = await axiosRequest('POST', 'login', body);
 
     if (respData.status === 'Success') {
+      localStorage.clear();
       localStorage.setItem('token', respData.token);
       document.cookie = 'authorized = true; Max-Age = 1500';
       document.getElementById('btn-login').classList.remove('active');
@@ -31,16 +33,27 @@ export function loginUser() {
     }
   });
 
-  modalLogin.elem.addEventListener('click', function(e) {
-    // debugger
-    // if (!!(e.target.id != 'btn-login' & !e.target.closest('.form-login'))) {
-    //   modalLogin.closeModal()
-    // }
-    if (e.target === this.querySelector('[type="reset"]')) {
-      modalLogin.elem.remove()
-    }
 
-  })
+
+
+  // modalLogin.elem.addEventListener('click', function(e) {
+  //   if (e.target === this.querySelector('[type="reset"]')) {
+  //     modalLogin.elem.remove()
+  //   }
+  // });
+  //
+  // window.onmousedown =  function (e) {
+  //   if (e.target !== modalLogin.elem) {
+  //     modalLogin.elem.remove()
+  //   }
+  // };
+  //
+  // window.onkeyup = function (e) {
+  //   if (e.key === "Escape") {
+  //     modalLogin.elem.remove()
+  //   }
+  // };
+
 }
 
 

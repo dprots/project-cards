@@ -21,10 +21,9 @@ export function searchVisit() {
     const {search, status, urgency} = formSearch.serialize();
     const dataVisit = await axiosRequest('GET', 'cards');
     dataVisit.forEach(item => {
-
-        if (item.status === status && item.content.urgency === urgency) {
-          appendCard(item)
-        }
-      })
+      if ((status === 'etc' || item.status === status) && (urgency === 'etc' || item.content.urgency === urgency)) {
+        appendCard(item)
+      }
+    })
   })
 }

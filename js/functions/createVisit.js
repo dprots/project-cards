@@ -8,6 +8,7 @@ export function createVisit() {
   const selectElem = new Select('', 'select-list-doctor', 'select-item',
       ['Cardiologist', 'Dentist', 'Therapist']);
   render(selectElem, modalCreateVisit.elem);
+  modalCreateVisit.close();
 
   selectElem.elem.addEventListener('change', function (e) {
     const formElem =  modalCreateVisit.elem.querySelector('#form-create-visit');
@@ -69,15 +70,5 @@ export function createVisit() {
         alert('Error, try again');
       }
     });
-
-    modalCreateVisit.elem.addEventListener('click', function(e) {
-      // debugger
-      // if (!!(e.target.id != 'btn-login' & !e.target.closest('.form-login'))) {
-      //   modalLogin.closeModal()
-      // }
-      if (e.target === this.querySelector('[type="reset"]')) {
-        modalCreateVisit.elem.remove()
-      }
-    })
   })
 }
