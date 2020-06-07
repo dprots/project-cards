@@ -73,6 +73,21 @@ header {
   padding-top: 100px;
 }
 
+.btn-show {
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.btn-show:focus {
+  outline: none;
+}
+
+.btn-show:hover {
+  color: blue;
+}
+
 .hidden-place, .btn-show {
   display: none;
 }

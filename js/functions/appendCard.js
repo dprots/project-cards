@@ -1,14 +1,14 @@
-import {render} from '../functions';
 import {VisitCardiologist, VisitDentist, VisitTherapist} from '../classes'
 
 export function appendCard(dataVisit) {
   let visitCard;
   document.querySelector('.board-empty').classList.remove('active');
-  const dataArg = Object.values(dataVisit.content);
+  const {id, doctor, status, content} = dataVisit;
+  const dataArg = Object.values(content).reverse();
 
-  if (dataVisit.doctor === 'Cardiologist') visitCard = new VisitCardiologist(dataVisit.id, dataVisit.doctor, dataVisit.status, ...dataArg);
-  if (dataVisit.doctor === 'Dentist') visitCard = new VisitDentist(dataVisit.id, dataVisit.doctor, dataVisit.status, ...dataArg);
-  if (dataVisit.doctor === 'Therapist') visitCard = new VisitTherapist(dataVisit.id, dataVisit.doctor, dataVisit.status, ...dataArg);
+  if (doctor === 'Cardiologist') visitCard = new VisitCardiologist(...dataArg, id, doctor, status);
+  if (doctor === 'Dentist') visitCard = new VisitDentist(...dataArg, id, doctor, status);
+  if (doctor === 'Therapist') visitCard = new VisitTherapist(...dataArg, id, doctor, status);
 
-  render(visitCard, document.querySelector('#visit-container'))
+  visitCard.render(document.querySelector('#visit-container'))
 }

@@ -12,9 +12,11 @@ export function createVisit() {
 
   selectElem.elem.addEventListener('change', function (e) {
     const formElem =  modalCreateVisit.elem.querySelector('#form-create-visit');
+
     if (formElem) {
       formElem.remove();
     }
+
     const selectedDoctor = e.target.value;
     const formCreateVisit = new Form('', 'form-create-visit', 'form', {submit: 'Create', reset: 'Close'});
     render(formCreateVisit, modalCreateVisit.elem);
@@ -63,6 +65,7 @@ export function createVisit() {
         content: bodyContent
       };
       const dataPost = await axiosRequest('POST','cards', bodyAdd);
+
       if (dataPost.id) {
         modalCreateVisit.elem.remove();
         appendCard(dataPost);

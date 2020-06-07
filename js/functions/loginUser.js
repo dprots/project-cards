@@ -32,28 +32,6 @@ export function loginUser() {
       alert(respData.message)
     }
   });
-
-
-
-
-  // modalLogin.elem.addEventListener('click', function(e) {
-  //   if (e.target === this.querySelector('[type="reset"]')) {
-  //     modalLogin.elem.remove()
-  //   }
-  // });
-  //
-  // window.onmousedown =  function (e) {
-  //   if (e.target !== modalLogin.elem) {
-  //     modalLogin.elem.remove()
-  //   }
-  // };
-  //
-  // window.onkeyup = function (e) {
-  //   if (e.key === "Escape") {
-  //     modalLogin.elem.remove()
-  //   }
-  // };
-
 }
 
 
