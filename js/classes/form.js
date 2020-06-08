@@ -19,7 +19,7 @@ export default class Form {
     fieldSet.classList.add('form-fieldset');
     this.elem.append(fieldSet);
     for (const [key, value] of Object.entries(this._buttons)) {
-      const button = new Input (`${key}`, '', `${value}`);
+      const button = new Input (`${key}`, 'button', '',`${value}`);
       render(button, this.elem);
     }
     return this.elem;

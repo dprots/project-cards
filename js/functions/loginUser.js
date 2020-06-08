@@ -2,13 +2,13 @@ import {Form, Input, Modal} from '../classes/index.js';
 import {axiosRequest, render, showCards} from './index.js';
 
 export function loginUser() {
-  const modalLogin = new Modal('modal');
+  const modalLogin = new Modal('modal', 'Login');
   render(modalLogin, document.getElementById('root'));
   const formLogin = new Form('', 'form-login', 'form', {submit: 'Enter', reset: 'Cancel'});
   render(formLogin, modalLogin.elem);
   const fieldContainer = formLogin.elem.querySelector('.form-fieldset');
-  const inputEmail = new Input('email', 'email', null, 'Email', 'required');
-  const inputPassword = new Input('password', 'password', '', 'Password', 'required');
+  const inputEmail = new Input('email', '','email', null, 'Email', 'required');
+  const inputPassword = new Input('password', '','password', '', 'Password', 'required');
 
   render(inputEmail, fieldContainer);
   render(inputPassword, fieldContainer);

@@ -11,8 +11,8 @@ export default class VisitCardiologist extends Visit {
 
   render(place) {
     super.render(place);
-    this.elem = `<p>Blood pressure: ${this._pressure}</p><p>Mass index: ${this._massIndex}</p>
-                 <p>Diseases: ${this._diseases}</p><p>Age: ${this._age}</p>`;
+    this.elem = `<p>Blood pressure: <span>${this._pressure}</span></p><p>Mass index: <span>${this._massIndex}</span></p>
+                 <p>Diseases: <span>${this._diseases}</span></p><p>Age: <span>${this._age}</span></p>`;
     this._hiddenPlace.insertAdjacentHTML('beforeend', this.elem);
   }
 }

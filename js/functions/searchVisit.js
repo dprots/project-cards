@@ -5,7 +5,7 @@ export function searchVisit() {
   const formSearch = new Form ('', 'form-search-visit', 'form', {reset: 'Show all'});
   render(formSearch, document.getElementById('search-visit'));
   const fieldContainer = formSearch.elem.querySelector('.form-fieldset');
-  const inputSearch = new Input ('text','search', '', 'Search parameter');
+  const inputSearch = new Input ('text','', 'search', '', 'Search parameter');
   const selectStatus = new Select('Status: ', 'status', 'select-item', ['Open', 'Done']);
   const selectUrgency = new Select('Urgency: ','urgency', 'select-item', ['High', 'Normal', 'Low']);
 

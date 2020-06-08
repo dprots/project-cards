@@ -1,6 +1,7 @@
 export default class Input {
-  constructor(type, name, value, placeholder, req) {
+  constructor(type, className, name, value, placeholder, req) {
     this._type = type;
+    this._className = className;
     this._name = name || '';
     this._value = value || '';
     this._placeholder = placeholder || '';
@@ -11,6 +12,10 @@ export default class Input {
   render() {
     this.elem = document.createElement('input');
     this.elem.setAttribute('type', `${this._type}`);
+
+    if (this._className) {
+      this.elem.classList.add(`${this._className}`);
+    }
 
     if (this._name) {
       this.elem.setAttribute('name', `${this._name}`)

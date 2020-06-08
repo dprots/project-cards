@@ -8,7 +8,7 @@ export default class VisitTherapist extends Visit {
 
   render(place) {
     super.render(place);
-    this.elem = `<p>Age: ${this._age}</p>`;
+    this.elem = `<p>Age: <span>${this._age}</span></p>`;
     this._hiddenPlace.insertAdjacentHTML('beforeend', this.elem);
   }
 }

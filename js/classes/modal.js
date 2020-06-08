@@ -1,12 +1,14 @@
 export default class Modal {
-  constructor (classList) {
+  constructor (classList, title) {
     this._classList = classList;
+    this._title = title;
     this.elem = null;
   }
 
   render() {
     this.elem = document.createElement('div');
     this.elem.classList = this._classList;
+    this.elem.innerHTML = `<h3>${this._title}</h3>`;
     return this.elem;
   }
 
