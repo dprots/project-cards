@@ -1,5 +1,5 @@
-import {Form, Select, Input} from '../classes';
-import {axiosRequest, render,appendCard} from '../functions';
+import {Form, Select, Input} from '../classes/index.js';
+import {axiosRequest, render,appendCard} from './index.js';
 
 export function searchVisit() {
   const formSearch = new Form ('', 'form-search-visit', 'form', {reset: 'Show all'});
@@ -33,7 +33,11 @@ export function searchVisit() {
     const {search, status, urgency} = formSearch.serialize();
     const dataVisit = await axiosRequest('GET', 'cards');
     dataVisit.forEach(item => {
-      if ((search === '' ||  item.doctor.includes(search) || item.content.name.includes(search) || item.content.surname.includes(search) || item.content.purposeVisit.includes(search))
+      if ((search === ''
+          || item.doctor.includes(search)
+          || item.content.name.includes(search)
+          || item.content.surname.includes(search)
+          || item.content.purposeVisit.includes(search))
           && (status === 'etc' || item.status === status)
           && (urgency === 'etc' || item.content.urgency === urgency)) {
         appendCard(item)

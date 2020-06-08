@@ -24,7 +24,7 @@ export default class Visit {
     this._hiddenPlace.classList.add('hidden-place');
     this.elem.append(this._hiddenPlace);
     const moreInfo = `<p>Purpose of visit: ${this._purposeVisit}</p><p>Urgency: ${this._urgency}</p>
-                    <p>Comments: ${this._comments}</p>`;
+                      <p>Comments: ${this._comments}</p>`;
     this._hiddenPlace.innerHTML = moreInfo;
     place.append(this.elem);
   }

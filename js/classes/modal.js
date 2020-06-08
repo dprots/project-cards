@@ -19,12 +19,11 @@ export default class Modal {
       }
     });
 
-    // здесь нужно доделать закрытие модального окна при клике за его пределами
-    // document.onmousedown =  function (e) {
-    //   if (e.target === modal) {
-    //     modal.remove();
-    //   }
-    // };
+    document.onmousedown =  function (e) {
+      if (!e.target.closest('.modal')) {
+        modal.remove();
+      }
+    };
 
     document.onkeyup = function (e) {
       if (e.key === "Escape") {

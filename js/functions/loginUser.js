@@ -1,5 +1,5 @@
-import {Form, Input, Modal} from '../classes';
-import {axiosRequest, render, showCards} from '../functions';
+import {Form, Input, Modal} from '../classes/index.js';
+import {axiosRequest, render, showCards} from './index';
 
 export function loginUser() {
   const modalLogin = new Modal('modal');

@@ -1,4 +1,4 @@
-import {VisitCardiologist, VisitDentist, VisitTherapist} from '../classes'
+import {VisitCardiologist, VisitDentist, VisitTherapist} from '../classes/index.js'
 
 export function appendCard(dataVisit) {
   let visitCard;

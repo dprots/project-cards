@@ -1,4 +1,4 @@
-import {appendCard} from  './appendCard.js'
+import {appendCard} from './appendCard.js'
 import {createVisit} from './createVisit.js';
 import {axiosRequest} from './axiosRequest.js';
 import {loginUser} from './loginUser.js';

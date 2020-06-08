@@ -9,7 +9,8 @@ export default class TextArea {
 
   render() {
     this.elem = document.createElement('div');
-    this.elem.innerHTML = `<textarea class=${this._classList} cols=${this._col} rows=${this._row} name='comments' placeholder=${this._placeholder}>`;
+    this.elem.innerHTML = `<textarea class=${this._classList} cols=${this._col} rows=${this._row} name='comments' 
+                          placeholder=${this._placeholder}>`;
     return this.elem;
   }
 }
