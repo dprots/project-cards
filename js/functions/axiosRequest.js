@@ -1,7 +1,7 @@
 export async function axiosRequest(method, url, body) {
   const token = localStorage.getItem('token');
   const req = axios.create({
-    baseURL: 'http://cards.danit.com.ua/',
+    baseURL: 'https://cards.danit.com.ua/',
     headers: {
       Authorization: `Bearer ${token}`
     }
