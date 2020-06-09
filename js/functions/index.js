@@ -5,5 +5,6 @@ import {loginRequest} from './loginRequest.js'
 import {loginUser} from './loginUser.js';
 import {render} from './render.js';
 import {searchVisit} from './searchVisit.js';
+import {DragAndDrop} from "./drag-and-drop.js";
 
-export {appendCard, createVisit, axiosRequest, loginRequest, loginUser, render, searchVisit}
+export {appendCard, createVisit, axiosRequest, loginRequest, loginUser, render, searchVisit, DragAndDrop}
