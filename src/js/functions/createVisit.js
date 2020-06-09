@@ -4,7 +4,6 @@ import {render, axiosRequest, appendCard} from './index.js';
 export function createVisit() {
   const modalCreateVisit = new Modal('modal', 'Create a Visit');
   render(modalCreateVisit, document.getElementById('root'));
-  // modalCreateVisit.elem.insertAdjacentHTML('beforeend', '<h3>Create a Visit</h3>');
   const selectElem = new Select('', 'select-list-doctor', 'select-item',
       ['Cardiologist', 'Dentist', 'Therapist']);
   render(selectElem, modalCreateVisit.elem);

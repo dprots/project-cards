@@ -1,5 +1,7 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 
 module.exports = {
@@ -8,15 +10,14 @@ module.exports = {
   output: {
     path: path.resolve('./', 'dist'),
     filename: 'bundle.js'},
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ExtractTextPlugin.extract(
-            {
-              fallback: 'style-loader',
-              use: 'css-loader'
-            })
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.(png|jpeg|gif)$/i,
@@ -28,8 +29,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin(
-        {filename: 'style.css'}
-    )
+    new MiniCssExtractPlugin({
+          filename: 'style.css'
+        })
   ]
 };

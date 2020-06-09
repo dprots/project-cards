@@ -1,3 +1,4 @@
+import DragAndDrop from './dragAndDrop'
 import Form from './form.js';
 import Input from './input.js';
 import Modal from './modal.js';
@@ -8,4 +9,4 @@ import VisitCardiologist from './visitCardiologist.js';
 import VisitDentist from './visitDentist.js';
 import VisitTherapist from './visitTherapist.js';
 
-export {Form, Input, Modal, Select, TextArea, Visit, VisitCardiologist, VisitDentist, VisitTherapist}
+export {DragAndDrop, Form, Input, Modal, Select, TextArea, Visit, VisitCardiologist, VisitDentist, VisitTherapist}
