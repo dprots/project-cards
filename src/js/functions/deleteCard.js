@@ -11,5 +11,7 @@ export async function deleteCard (elem) {
     } else {
     alert('Error, try again');
     }
+  } else {
+    alert ('Password incorrect!')
   }
 }

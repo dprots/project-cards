@@ -1,4 +1,4 @@
-import {axiosRequest, createVisit, loginUser, deleteCard, showCards} from './functions/index.js';
+import {axiosRequest, createVisit, loginUser, deleteCard, showCards} from './functions';
 
 // for (let i=7575; i < 7650; i++) {
 //   axiosRequest('DELETE', `cards/7652`);

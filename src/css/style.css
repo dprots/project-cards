@@ -39,6 +39,8 @@ header {
   flex-wrap: wrap;
   width: 90%;
   align-items: baseline;
+  border-bottom: 1px solid cadetblue;
+  padding-bottom: 20px;
 }
 
 #form-search-visit select {
@@ -48,6 +50,7 @@ header {
 textarea {
   margin-top: 10px;
   width: 100%;
+  font-size: 16px;
 }
 /*#form-search-visit .form-fieldset {*/
 /*  display: contents;*/
@@ -87,6 +90,11 @@ textarea {
 
 input  {
   margin: 5px auto;
+  font-size: 16px;
+}
+
+select {
+  font-size: 16px;
 }
 
 .form-fieldset > input {
@@ -120,13 +128,16 @@ input  {
   padding: 10px 20px;
   border-radius: 20px;
   color: darkcyan;
+  font-size: 18px;
 }
 
 .btn-show {
+  color: darkcyan;
   border: none;
   padding: 5px;
   cursor: pointer;
   background-color: transparent;
+  font-size: 14px;
 }
 
 .btn-show:focus, .button:focus {
@@ -134,7 +145,7 @@ input  {
 }
 
 .btn-show:hover {
-  color: darkcyan;
+  color: cadetblue;
 }
 
 .hidden-place, .btn-show {
@@ -146,11 +157,12 @@ input  {
   display: flex;
   flex-direction: column;
   width: 250px;
-  border: 1px solid #555555;
+  border: 1px solid cadetblue;
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
   background-color: aliceblue;
+  line-height: 2;
 }
 
 .card-visit span {
@@ -172,6 +184,16 @@ input  {
   text-align: center;
 }
 
+.card-comments {
+  word-wrap: break-word;
+  background-color: white;
+  padding: 5px;
+  font-weight: 600;
+  border: 1px solid lightgrey;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
 .delete-icon {
   position: absolute;
   top: 5px;
@@ -187,6 +209,7 @@ input  {
   padding: 5px 10px;
   color: white;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .button:hover {

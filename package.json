@@ -1,0 +1,29 @@
+{
+  "name": "step-cards",
+  "version": "1.0.0",
+  "description": "Step Project Cards",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/dmitpro/step-cards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/dmitpro/step-cards/issues"
+  },
+  "homepage": "https://gitlab.com/dmitpro/step-cards#readme",
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
