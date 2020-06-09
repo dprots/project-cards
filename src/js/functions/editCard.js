@@ -1,13 +1,26 @@
 import {axiosRequest} from './axiosRequest.js';
-import {Modal} from '../classes';
+import {Form} from '../classes';
+import {render} from './render.js';
 
 export async function editCard (elem) {
-  const modalEdit = new Modal('modal', 'Edit');
-  render(modalEdit, document.getElementById('root'));
-  const {data} = await axiosRequest('PUT', `cards/${elem.dataset.id}`);
+  //Очищаем содержимое карточки
 
-    if (data.status === 'Success') {
 
+  // Меняем содержимое карточки на форму со значениями, нужно добавить поле Status
+
+  const formEdit = new Form('', 'form-edit', 'form', {submit: 'Save', reset: 'Cancel'});
+
+
+  render(formEdit, "Контейнер карточки");
+
+
+//Готовим боди запроса
+  const bodyEdit = formEdit.serialize();
+
+  const {data} = await axiosRequest('PUT', `cards/${elem.dataset.id}`, bodyEdit);
+
+    if (data.id) {
+//Выводим измененную карточку
     } else {
       alert('Error, try again');
     }

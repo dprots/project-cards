@@ -10,5 +10,5 @@ export function appendCard(dataVisit) {
   if (doctor === 'Dentist') visitCard = new VisitDentist(...dataArg, id, doctor, status);
   if (doctor === 'Therapist') visitCard = new VisitTherapist(...dataArg, id, doctor, status);
 
-  visitCard.render(document.querySelector('#visit-container'))
+  visitCard.render(document.querySelector('#visit-container'));
 }
