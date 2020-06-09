@@ -1,5 +1,5 @@
 import {Input} from './index.js';
-import {render} from '../functions/index.js';
+import {render} from '../functions';
 
 export default class Form {
   constructor(actionForm = '', idForm, classesForm, buttons){

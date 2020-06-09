@@ -1,4 +1,4 @@
-import {Form, Input, Modal} from '../classes/index.js';
+import {Form, Input, Modal} from '../classes';
 import {axiosRequest, render, showCards} from './index.js';
 
 export function loginUser() {

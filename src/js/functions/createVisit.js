@@ -1,4 +1,4 @@
-import {Form, Input, Modal, Select, TextArea} from '../classes/index.js';
+import {Form, Input, Modal, Select, TextArea} from '../classes';
 import {render, axiosRequest, appendCard} from './index.js';
 
 export function createVisit() {

@@ -1,4 +1,4 @@
-import {Form, Select, Input} from '../classes/index.js';
+import {Form, Select, Input} from '../classes';
 import {axiosRequest, render,appendCard} from './index.js';
 
 export function searchVisit() {

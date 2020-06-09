@@ -20,7 +20,7 @@ export default class Visit {
     this.elem.insertAdjacentHTML('beforeend', `<p class="card-status">Status: <span>${this._status}</span></p>
                     <p class="card-title">Visit № ${this._id}</p><p>Name: <span>${this._name}</span></p>
                     <p>Surname: <span>${this._surname}</span></p><p>Doctor: <span>${this._doctor}</span></p>
-                    <p class="delete-icon">&times;</p><button class="btn-show active">Show more</button>`);
+                    <p class="delete-icon"><img class="edit-icon" src="./dist/img/edit-button.png" alt="">&times;</p><button class="btn-show active">Show more</button>`);
     this._hiddenPlace = document.createElement('div');
     this._hiddenPlace.classList.add('hidden-place');
     this.elem.append(this._hiddenPlace);

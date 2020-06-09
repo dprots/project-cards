@@ -225,8 +225,7 @@ select {
 .card-title {
   background-color: cadetblue;
   color: white;
-  padding: 5px;
-  margin: 10px 30px;
+  margin: 25px 0 10px;
   text-align: center;
 }
 
@@ -240,11 +239,18 @@ select {
   margin-bottom: 3px;
 }
 
+.edit-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
 .delete-icon {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: -15px;
+  right: 8px;
   cursor: pointer;
+  font-size: 30px;
 }
 
 .button {

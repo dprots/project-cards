@@ -16,6 +16,9 @@ document.addEventListener('click', function (e) {
   }
 
   if (e.target.classList.contains('delete-icon')) deleteCard(e.target.parentNode);
+
+  if (e.target.classList.contains('edit-icon')) editCard(e.target.parentNode);
+
 });
 
 showCards();
